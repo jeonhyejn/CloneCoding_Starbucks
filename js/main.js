@@ -1,21 +1,3 @@
-// Header - 검색
-const searchEl = document.querySelector('.search');
-const searchInputEl = searchEl.querySelector('input');
-
-searchEl.addEventListener('click', function () {
-  searchInputEl.focus();
-});
-
-searchInputEl.addEventListener('focus', function() {
-  searchEl.classList.add('focused');
-  searchInputEl.setAttribute('placeholder', '통합검색');
-});
-
-searchInputEl.addEventListener('blur', function() {
-  searchEl.classList.remove('focused');
-  searchInputEl.setAttribute('placeholder', '');
-});
-
 // Header - 배지
 // gsap.to(요소, 시간, 옵션)
 
@@ -88,19 +70,6 @@ new Swiper('.promotion .swiper-container', {
   }
 });
 
-// Section - awards 슬라이더
-new Swiper('.awards .swiper-container', {
-  autoplay: true,
-  loop: true,
-  spaceBetween: 30,
-  slidesPerView: 5,
-  navigation: {
-    prevEl: '.awards .swiper-prev',
-    nextEl: '.awards .swiper-next'
-  }
-});
-
-
 // Section - 공지사항 토글
 const promotionEl = document.querySelector('.promotion');
 const promotionToggleBtn = document.querySelector('.toggle-promotion');
@@ -146,7 +115,3 @@ spyEls.forEach(function(spyEl) {
     .setClassToggle(spyEl, 'show')
     .addTo(new ScrollMagic.Controller());
 });
-
-// copyright year
-const thisYear = document.querySelector('.this-year');
-thisYear.textContent = new Date().getFullYear();
